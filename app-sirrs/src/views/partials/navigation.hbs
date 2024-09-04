@@ -1,0 +1,218 @@
+{{#if user}}
+
+<style>
+  .centers {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+</style>
+<style>
+  
+  a {
+
+    color: #fff !important;
+
+  }
+
+  .nav-item {
+    
+    margin: 0 auto;
+    padding: 1em 1em;
+    text-align: center;
+  }
+
+  .nav-item a {
+    color: #FFF;
+    text-decoration: none;
+    font: 20px "Gotham Narrow book", Sans-serif;
+    font-weight: bold;
+    margin: 0px 10px;
+    padding: 18px 10px;
+    position: relative;
+    z-index: 0;
+  }
+
+
+  /* Top & Bottom Borders Out */
+  .topBotomBordersOut a:before,
+  .topBotomBordersOut a:after {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #FFF;
+    content: "";
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+
+  .topBotomBordersOut a:before {
+    top: 0px;
+    transform: translateY(10px);
+  }
+
+  .topBotomBordersOut a:after {
+    bottom: 0px;
+    transform: translateY(-10px);
+  }
+
+  .topBotomBordersOut a:hover:before,
+  .topBotomBordersOut a:hover:after {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+</style>
+<nav class="menum navbar navbar-light navbar-expand-md justify-content-end fixed-top">
+  <div class="container">
+
+    <div class="navbar-collapse collapse justify-content-between align-items-center w-100" style="margin-left: 80%;"
+      id="collapsingNavbar2">
+      <ul class="topBotomBordersOut navbar-nav mx-auto text-center">
+        <li class="nav-item active">
+          <a class="nav-link" href="/links">Inicio</a>
+        </li>
+        {{!-- <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"> <a class="nav-link" href="#">Services</a>
+        <li class="nav-item"> <a class="nav-link" href="#">Portfolio</a> --}}
+        <li class="nav-item"> <a class="nav-link" href="/links">Listado</a>
+        <li class="nav-item"> <a class="nav-link" href="/logout">Salir</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light sticky-top justify-content-end" style="background-color: #88cfe0;">
+
+  <div class="container-fluid">
+    {{!-- <a class="navbar-brand" href="#">
+      <img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+    </a> --}}
+    <a class="navbar-brand" href="#">
+
+      <div class="d-inline-block">
+        <div class="centers">
+          <img src="/img/logo-junto-blanco.png" width="190px" height="80" alt="">
+        </div>
+      </div>
+
+      <div class="d-inline-block">
+        <div class="center">
+          <h3 style="font: 22px 'Gotham Narrow book', Sans-serif;
+                     font-weight: bold;
+                     margin: 0px 20px;" 
+              class=" text-center align-middle">
+
+              Sistema de Cargues de Registros Sanitarios
+          </h3>
+        </div>
+      </div>
+
+      {{!-- <div class="d-inline-block">
+        <h4 class="centers text-center align-middle">SIRRS</h4>
+      </div> --}}
+
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="nav ml-auto ">
+
+        <li class="nav-item center">
+          {{!-- <a class="nav-link active shadow" style="color:white;" href="/links"> --}}
+            {{!-- <button type="button" class="btn btn-light btn btn-outline-primary"> --}}
+              {{!-- <i class="fas fa-list" style="color: rgb(255, 255, 255);"></i> <br>
+              <strong>Listado</strong> --}}
+              {{!-- </button> --}}
+            {{!-- </a> --}}
+        </li>
+
+        <li class="nav-item center ml-3">
+          {{!-- <a class="nav-link active shadow" style="color:white;" href="/logout"> --}}
+            {{!-- <button type="button" class="btn btn-light btn btn-outline-primary"> --}}
+              {{!-- <i class="fas fa-door-closed" style="color: rgb(255, 255, 255);"></i> <br>
+              <strong> Cerrar Sesión</strong> --}}
+              {{!-- </button> --}}
+            {{!-- </a> --}}
+        </li>
+
+
+
+        {{!-- <li class="nav-item active">
+          <a class="nav-link" href="#">Algo pondre <span class="sr-only">(current)</span></a>
+        </li> --}}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+{{else}}
+<nav class="d-none navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #85C1E9  ;">
+
+  <div class="container-fluid">
+    {{!-- <a class="navbar-brand" href="#">
+      <img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+    </a> --}}
+    <a class="navbar-brand" href="#">
+
+      <div class="d-inline">
+        <img src="/img/logo-junto-blanco.png" width="50" height="50" class=" align-top" alt="">
+      </div>
+      <div class="d-inline-block">
+        <h4 class=" text-center align-middle">SIRRS</h4>
+      </div>
+
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="nav ml-auto ">
+
+        <li class="nav-item">
+          <a class="nav-link active " href="/links">
+            <button type="button" class="btn btn-light btn btn-outline-primary">
+              <i class="fas fa-list" style="color: black;"></i> Listado
+            </button>
+          </a>
+        </li>
+        {{!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Links
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/links">Todos</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href=".././links/add">Agregar link</a>
+          </div>
+        </li> --}}
+        {{!-- <li class="nav-item">
+          <a class="nav-link" href="/profile">Perfil</a>
+        </li> --}}
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">
+            <button type="button" class="btn btn-light btn btn-outline-primary">
+              <i class="fas fa-door-closed" style="color: black;"></i> Cerrar Sesión
+            </button>
+          </a>
+        </li>
+
+
+
+        {{!-- <li class="nav-item active">
+          <a class="nav-link" href="#">Algo pondre <span class="sr-only">(current)</span></a>
+        </li> --}}
+      </ul>
+    </div>
+  </div>
+</nav>
+{{/if}}

@@ -1,0 +1,198 @@
+<style>
+.bdivisor{
+    height: 3px;
+    width: 100%;
+    background-color: #88cfe0;
+    display: block;
+    margin: auto;
+}
+  
+.inp{
+    position: relative;
+    margin: auto;
+    width: 100% ;
+    border-radius: 3px;
+    overflow: hidden;
+    color: #56d0e2;
+    border: #56d0e2 1px solid;
+    margin-bottom: 3%;
+
+}
+.label{
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    font-size: 16px;
+    color: rgba(#000,.5);
+    font-weight: 500;
+    transform-origin: 0 0;
+    transform: translate3d(0,0,0);
+    transition: all .2s ease;
+    pointer-events: none;
+}
+.focus-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(#000,.05);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+input{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    border: 0;
+    font-family: inherit;
+    padding: 16px 12px 0 12px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: 400;
+    background: rgba(#000,.02);
+    box-shadow: inset 0 -1px 0 rgba(#000,.3);
+    color: #000;
+    transition: all .15s ease;
+}
+input:hover{
+    background: rgba(#000,.04);
+    box-shadow: inset 0 -1px 0 rgba(#000,.5);
+} 
+
+input:not(:placeholder-shown).label{
+    color: rgba(#000,.5);
+    transform: translate3d(0,-12px,0) scale(.75);
+}   
+input:focus{
+    background: rgba(#000,.05);
+    outline: none;
+    box-shadow: inset 0 -2px 0 #88cfe0;
+} 
+.label{
+    color: black;
+    transform: translate3d(0,-12px,0) scale(.75);
+} 
+.focus-bg{
+    transform: scaleX(1);
+    transition: all .1s ease;
+} 
+
+}
+</style>
+
+<div class="container">
+   <form action="/links/edit/{{infoCargueId.Id_Cargue}}" method="post">
+        <div class="row">
+            <div class="col-md-12 mt-5">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="col-md-12 mb-3">
+
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <a type="button" data-toggle="tooltip" data-placement="top" href="/links" title="Regresar" class="btn btn-secondary "><i class="fas fa-undo"></i></a>
+                                </div>
+
+                                <div class="col-md-8">
+                                    <h1 class="text-center">Agregar nuevo registro sanitario</h1> 
+                                </div>
+                            </div>
+                            <div class="bdivisor"></div>
+                        </div>
+                    </div>
+
+                    <div class="card-body row">
+                        
+                        <div class="col-md-6">     
+                            <label for="inp" class="inp">
+                                <input type="text" id="inp" value="{{infoCargueId.Id_RegistroSanitario}}" autofocus  name="numRS" placeholder="&nbsp;">
+                                <span class="label">Registro Sanitario</span>
+                                <span class="focus-bg"></span>
+                            </label>
+
+                            <label for="inp" class="inp">
+                                <input type="date" name="fechaVen" value="{{infoCargueId.Fecha_Vencimiento}}" id="inp" placeholder="&nbsp;">
+                                <span class="label">Fecha de Vencimiento</span>
+                                <span class="focus-bg"></span>
+                            </label>
+                            
+                            <label for="inp" class="inp">
+                                <input value="0000" readonly disabled value="{{infoCargueId.CLV_Identificador}}" type="text" name="CLV" id="inp">
+                                <span class="label">CLV Identificador</span>
+                                <span class="focus-bg"></span>
+                            </label>
+
+                            <label for="inp" class="inp">
+                                <input type="text"  name="prodNombre" value="{{infoCargueId.Producto_Nombre}}" id="inp" placeholder="&nbsp;">
+                                <span class="label">Producto Nombre</span>
+                                <span class="focus-bg"></span>
+                            </label>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="inp" class="inp">
+                                <input type="text" id="inp" name="prodMarca" value="{{infoCargueId.Producto_Marcas}}" placeholder="&nbsp;">
+                                <span class="label">Producto Marcas</span>
+                                <span class="focus-bg"></span>
+                            </label>
+
+                            <label for="inp" class="inp">
+                                <input type="text" name="prodFabricante" value="{{infoCargueId.Producto_Fabricantes}}" id="inp" placeholder="&nbsp;">
+                                <span class="label">Producto Fabricantes</span>
+                                <span class="focus-bg"></span>
+                            </label>
+                            
+                            <label for="inp" class="inp">
+                                <input type="text" name="prodTipo" id="inp" value="{{infoCargueId.Producto_Tipo}}" placeholder="&nbsp;">
+                                <span class="label">Producto Tipo</span>
+                                <span class="focus-bg"></span>
+                            </label>
+
+                            <label for="inp" class="inp">
+                                <input type="text"  name="prodEmpresa" id="inp" value="{{infoCargueId.Producto_Empresa}}" placeholder="&nbsp;">
+                                <span class="label">Producto Empresas</span>
+                                <span class="focus-bg"></span>
+                            </label>
+                        </div>
+
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-success btn-lg">Modificar</button> 
+                            <button type="reset" class="btn btn-danger btn-lg float-right">Cancelar</button> 
+                        </div>
+                    </div>
+                </div>
+
+           </div>  
+        </div>
+    </form>
+    
+</div>
+
+{{!-- <div class="container-fluid p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card ">
+                <div class="card-body">
+                    <form action="/links/edit/{{infoCargueId.Id_Cargue}}" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" value="{{infoCargueId.title}}" name="title" placeholder="Title" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="url" value="{{infoCargueId.url}}" name="url" class="form-control" placeholder="Url" >
+                        </div>
+
+                        <div class="form-group">
+                            <textarea name="description" rows="10"  class="form-control" placeholder="Description">{{infoCargueId.description}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div> --}}
